@@ -1,16 +1,17 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 
-const FormContainer = styled.div`
+const TodoForm = styled.form`
   /* box-sizing: border-box; */
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100vh;
+
+  width: 15%;
   justify-content: center;
-  align-items: center;
-  background-color: #eee;
-  margin: 10px;
+  gap: 5px;
+  /* align-items: center; */
+  background-color: #eaea;
+  padding: 10px;
 `;
 
 const Todos = () => {
@@ -19,12 +20,10 @@ const Todos = () => {
     console.log(e);
   };
   return (
-    <FormContainer>
-      <form onSubmit={pushTodoHandler}>
-        <input />
-        <button type="submit">push!</button>
-      </form>
-    </FormContainer>
+    <TodoForm onSubmit={pushTodoHandler}>
+      <input />
+      <button type="submit">push!</button>
+    </TodoForm>
   );
 };
 

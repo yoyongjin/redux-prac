@@ -1,20 +1,22 @@
 import React from "react";
+import styled from "styled-components";
 import Todos from "./components/Todos";
-import { createGlobalStyle } from "styled-components";
-import reset from "styled-reset";
 
-const GlobalStyle = createGlobalStyle`
-  ${reset}
-  margin: 0;
-  padding: 0;
+const AppContainer = styled.div`
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ddd;
 `;
 
 const App = () => {
   return (
-    <>
-      <GlobalStyle />
+    <AppContainer>
       <Todos />
-    </>
+    </AppContainer>
   );
 };
 export default App;
